@@ -18,7 +18,7 @@ export PATH=$PATH:$VBCC/bin
 export NDK_INC=$HOME/code/amiga_sdk/NDK_INC/Include/include_h
 
 # Aliases
-alias sshnallerooth='ssh nalle@207.154.201.41'
+alias sshnallerooth='ssh nalle@139.162.155.122 -p 755'
 alias r=ranger
 alias hx=helix
 alias phptest='composer exec "phpunit --color=always ."'
