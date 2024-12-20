@@ -18,12 +18,17 @@ vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 -- Quickfix
-vim.keymap.set("n", "<leader>-h", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<leader>-l", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>h", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<leader>l", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
-vim.keymap.set('n', '<C-h>', '<C-w>h')
-vim.keymap.set('n', '<C-j>', '<C-w>j')
-vim.keymap.set('n', '<C-k>', '<C-w>k')
-vim.keymap.set('n', '<C-l>', '<C-w>l')
+-- GitGutter
+vim.keymap.set("n", "[g", "<cmd>GitGutterPrevHunk<CR>")
+vim.keymap.set("n", "]g", "<cmd>GitGutterNextHunk<CR>")
+
+-- Terminal mode
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
+-- Nerdtree --
+vim.keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<CR>")
