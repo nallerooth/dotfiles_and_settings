@@ -1,6 +1,4 @@
 -- local lsp = require('lsp-zero')
---
--- lsp.preset("recommended")
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
@@ -33,22 +31,7 @@ cmp.setup({
         -- {name = 'copilot'},
     },
 })
--- local cmp_select = {behavior = cmp.SelectBehavior.Select}
--- local cmp_mappings = lsp.defaults.cmp_mappings({
---   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
---   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
---   -- ['<C-y>'] = cmp.mapping.confirm({ select = true }),
---   ['<CR>'] = cmp.mapping.confirm({ select = true }),
---   ["<C-Space>"] = cmp.mapping.complete(),
--- })
---
--- cmp_mappings['<Tab>'] = nil
--- cmp_mappings['<S-Tab>'] = nil
---
--- lsp.setup_nvim_cmp({
---   mapping = cmp_mappings
--- })
---
+
 lsp.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
@@ -69,5 +52,18 @@ end)
 
 -- (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+require('lspconfig').gopls.setup({
+  cmd = {'gopls', '-remote=auto'},
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+        unreachable = true,
+        nilness = true,
+      },
+      staticcheck = true,
+    },
+  },
+})
 
 lsp.setup()
