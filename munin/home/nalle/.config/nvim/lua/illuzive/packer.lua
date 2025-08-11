@@ -8,12 +8,12 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.2',
+        'nvim-telescope/telescope.nvim', tag = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
     use('RRethy/nvim-base16')
-    -- use('EdenEast/nightfox.nvim')
+    use('EdenEast/nightfox.nvim')
     -- use('cocopon/iceberg.vim')
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -37,6 +37,10 @@ return require('packer').startup(function(use)
             {'L3MON4D3/LuaSnip'},     -- Required
         }
     }
+
+    -- Go dev
+    use('fatih/vim-go')
+    -- Go dev end
 
     use({
         "kylechui/nvim-surround",
