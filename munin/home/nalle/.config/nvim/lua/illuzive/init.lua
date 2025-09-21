@@ -1,3 +1,3 @@
-require("illuzive.set")
-require("illuzive.packer")
-require("illuzive.remap")
+require("illuzive.base")
+require("illuzive.lazy")
+require("illuzive.autocommand")
