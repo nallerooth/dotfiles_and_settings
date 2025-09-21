@@ -23,7 +23,7 @@ require("lazy").setup({
 	},
 	-- Colorscheme(s) used when installing plugins
 	install = {
-		colorscheme = { "catppuccin", "tokyonight", "habamax" },
+		colorscheme = { "nordic", "catppuccin", "tokyonight", "habamax" },
 	},
 	checker = {
 		-- Automatically check for plugin updates

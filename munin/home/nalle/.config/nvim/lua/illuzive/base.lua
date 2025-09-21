@@ -32,3 +32,10 @@ vim.opt.termguicolors = true
 vim.wo.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "80"
+
+-- Backup and undo
+-- Swap and backup
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = vim.fn.stdpath("data") .. "/undo/"
+vim.opt.undofile = true
