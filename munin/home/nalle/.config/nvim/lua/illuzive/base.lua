@@ -39,11 +39,18 @@ vim.wo.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "80"
 vim.opt.hlsearch = false
+vim.opt.scrolloff = 8
 
 vim.diagnostic.config({
 	virtual_text = {
 		prefix = '●', -- Could be '■', '▎', 'x'
 	},
+	severity_sort = true,
+	virtual_lines = true,
+	float = {
+		source = "if_many",
+		border = "rounded",
+	}
 })
 
 -- Backup and undo
