@@ -2,8 +2,11 @@
 vim.g.mapleader = " "
 
 -- Misc keymaps
+-- Diagnostic keymaps
 vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
 vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+
+-- LSP keymaps, should probably be moved to lsp.lua
 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
 vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
 
@@ -30,11 +33,18 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 
 -- Look and feel
+-- Basics
 vim.opt.termguicolors = true
 vim.wo.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "80"
 vim.opt.hlsearch = false
+
+vim.diagnostic.config({
+	virtual_text = {
+		prefix = '●', -- Could be '■', '▎', 'x'
+	},
+})
 
 -- Backup and undo
 -- Swap and backup
