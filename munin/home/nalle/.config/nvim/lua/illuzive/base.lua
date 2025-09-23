@@ -32,6 +32,7 @@ vim.opt.termguicolors = true
 vim.wo.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "80"
+vim.opt.hlsearch = false
 
 -- Backup and undo
 -- Swap and backup
