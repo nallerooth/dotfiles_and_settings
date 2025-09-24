@@ -46,7 +46,10 @@ vim.diagnostic.config({
 		prefix = '●', -- Could be '■', '▎', 'x'
 	},
 	severity_sort = true,
-	virtual_lines = true,
+	virtual_lines = {
+			current_line = true,
+		},
+
 	float = {
 		source = "if_many",
 		border = "rounded",
